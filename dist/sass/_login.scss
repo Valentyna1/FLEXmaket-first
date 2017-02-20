@@ -1,0 +1,107 @@
+@import "custom-variables";
+
+main{
+	background-image: url('../img/bg-form.jpg');
+	width: 100vw;
+	height: 100vh;
+}
+.login-form{
+	padding: 1em;
+	align-items: center;
+	justify-content: center;
+}
+.form{
+	padding: 6em 2em;
+	width: 100%;
+	position: relative;
+	max-width: calc( 290px + 5.4em);
+	box-shadow: 0px 5px 16px 5px rgba(0,2,3,.08);
+	border-radius: 1em;
+	background: #fff;
+	color: #404040;
+	@media (min-width: 1024px) {
+		padding: 5em;
+	}
+	.form-input{		
+		justify-content: space-between;
+		margin-bottom: 2em;
+		cursor: pointer;
+		align-items: center;
+		&:hover{
+			.icon{
+				color: $generalColor;
+			}
+			label{
+				color: $generalColor;
+			}
+			input{
+				border-bottom: 1px solid $generalColor;
+			}
+		}
+		.icon{
+			font-size: 2.5em;
+			color: #a0a0a0;
+		}
+		label{
+			margin-left: 3.5em;
+			display: block;
+			color: #fff;						
+		}
+		input{
+			width: 80%;
+			font-family: 'sf_ui_textregular';			
+			border-bottom: 1px solid #a0a0a0; 
+			color: #bdbdbd;
+			font-size: 1.8em;
+			margin-left: 2em;
+		}
+	}
+	.input-group{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.add-task-btn{
+			background: $generalColor;
+			padding: 1em;
+			color: #fff;
+			width: 100%;
+			margin: 2em 0;
+			border-radius: .5em;
+			text-transform: uppercase;
+			font-size: 1.8em;
+			font-family: 'sf_ui_textsemibold';
+			@media (min-width: 1024px){
+				width: auto;
+				
+			}
+		}
+		input[type="checkbox"]{
+			display: none;
+			& + label{
+				cursor: pointer;
+				font-size: 1.4em;
+				color: #bdbdbd;
+				align-items: center;
+				&::before{
+					content: '';
+					display: inline-block;
+					width: 1em;
+					height: 1em;
+					border: 1px solid #a0a0a0;
+					border-radius: .2em;
+					margin-right: 1em;
+				}
+			}
+			&:checked{
+				& + label{
+					&::before{
+						background: url('../img/check_box.svg') no-repeat;
+						border: none;
+						height: 1em;
+						width: 1em;
+					}
+				}
+			}
+		}		
+	}
+}
