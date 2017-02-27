@@ -1,17 +1,17 @@
 @import "custom-variables";
 
-main{
+.login-form-wrap{
+	display: flex;
 	background-image: url('../img/bg-form.jpg');
-	width: 100vw;
+	background-size: cover;
+	width: 100%;
 	height: 100vh;
-}
-.login-form{
-	padding: 1em;
 	align-items: center;
 	justify-content: center;
 }
-.form{
-	padding: 6em 2em;
+form{
+	padding: 4em 2em;
+	margin: 1em;
 	width: 100%;
 	position: relative;
 	max-width: calc( 290px + 5.4em);
@@ -62,7 +62,7 @@ main{
 		align-items: center;
 		.add-task-btn{
 			background: $generalColor;
-			padding: 1em;
+			padding: .5em;
 			color: #fff;
 			width: 100%;
 			margin: 2em 0;
@@ -70,14 +70,13 @@ main{
 			text-transform: uppercase;
 			font-size: 1.8em;
 			font-family: 'sf_ui_textsemibold';
-			@media (min-width: 1024px){
-				width: auto;
-				
-			}
 		}
 		input[type="checkbox"]{
 			display: none;
 			& + label{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
 				cursor: pointer;
 				font-size: 1.4em;
 				color: #bdbdbd;
@@ -95,10 +94,11 @@ main{
 			&:checked{
 				& + label{
 					&::before{
+						content: '';
 						background: url('../img/check_box.svg') no-repeat;
 						border: none;
-						height: 1em;
-						width: 1em;
+						height: 1.4em;
+						width: 1.4em;
 					}
 				}
 			}
