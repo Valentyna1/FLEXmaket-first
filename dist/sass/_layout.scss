@@ -24,15 +24,16 @@
 	transform: translateY(55%);
 	span{
 		display: inline-block;
-    	width: 3em;
+    	width: 3.5em;
     	height: .5em;
    		background: #fff;
     	position: absolute;
     	border-radius: 4px;
-    	right: 25%;
+    	right: 21%;
+    	top: 47%;
     	& + span{
     		display: inline-block;
-    		width: 3em;
+    		width: 3.5em;
     		height: .5em;
    			background: #fff;
     		position: absolute;
@@ -104,24 +105,28 @@ main{
 .task{
 	width: 100%;
 	padding-left: 5.4em;
+	padding-bottom: 2.5em;
 	position: relative;
 	max-width: calc( 600px + 5.4em);
-	@media (min-width: 1024px) {
-		flex-direction: row;
-	}
 	&.open{
 		.task-content-wrap{
 			display: block;
 
 		}
-		.task-header{
-			border-radius: 1em 1em 0 0;
+		.task-header{			
+			border-radius: 1em 1em 0 0;	
+			.icon-arrow{
+				font-size: 1em;
+			}		
 		}
 	}
 	&.success{
 		.task-header{
 			background: $successBg;
 			border-radius: 1em 1em 0 0;
+			.icon-arrow{
+				font-size: 1em;
+			}
 		}
 		.task-content-wrap{
 			display: block;
@@ -131,6 +136,9 @@ main{
 		.task-header{
 			background: $warningBg;
 			border-radius: 1em 1em 0 0;
+			.icon-arrow{
+				font-size: 1em;
+			}
 		}
 		.task-content-wrap{
 			display: block;
@@ -184,13 +192,13 @@ main{
 			align-items: center;
 			.time{
 				width: 90%;
-				padding-left: 5px;
+				padding-left: 10px;
 			}
 		}
 		.task-text-row{
 			.text{
 				width: 90%;
-				padding-left: 5px;
+				padding-left: 10px;
 			}
 		}
 		.task-check-row{
@@ -204,7 +212,7 @@ main{
     			display: none;
     		}
 			label{
-				padding: 5px 0 0 5px;
+				padding: 5px 0 0 10px;
 			}
 		}
 		.task-edit-row{
@@ -213,10 +221,18 @@ main{
 				color: #bebebe;
 			}			
 		}
-	}
+	}	
+}
+.task-wrap{
+	@media (min-width: 1024px) {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	}	
 	.warning-wrap{
 		align-items: center;
-		padding-top: 2em;
+		padding-left: 4.5em;
+		padding-bottom: 2.5em;
 		.icon-warning{
 			color: $warningBg;
 			font-size: 3.3333em;
@@ -229,7 +245,8 @@ main{
 	}
 	.success-wrap{
 		align-items: center;
-		padding-top: 2em;
+		padding-left: 4.5em;
+		padding-bottom: 2.5em;
 		.icon-star{
 			color: $successBg;
 			font-size: 3.3333em;
@@ -239,8 +256,9 @@ main{
 			color: $successBg;
 			padding-left: 10px;
 		}
-	}	
+	}
 }
+	
 .to-do-time{
 	width: 3.3333em;
 	height: 3.3333em;
